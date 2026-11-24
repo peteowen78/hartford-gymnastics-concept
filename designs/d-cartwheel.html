@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hartford School of Gymnastics — Direction D, Cartwheel (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&family=Red+Hat+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff;--mist:#EDF4EE;--green:#0E7A47;--deep:#0A3323;--coral:#FF6B4A;--soft:#51675B}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--deep);font:400 1.0625rem/1.6 "Red Hat Text",system-ui,sans-serif}
+h1,h2,h3{font-family:"Red Hat Display",sans-serif;font-weight:900;line-height:1;letter-spacing:-.03em;margin:0;text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;gap:28px;padding:18px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:900 1.45rem/1 "Red Hat Display",sans-serif;letter-spacing:-.03em}
+.logo small{display:block;font:500 .7rem/1 "Red Hat Text",sans-serif;letter-spacing:.01em;color:var(--soft);margin-top:4px}
+.logo svg{transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.logo:hover svg{transform:rotate(360deg)}
+nav{margin-left:auto;display:flex;gap:28px;font-weight:500}
+nav a{text-decoration:none}nav a:hover{color:var(--green)}
+.btn{display:inline-block;background:var(--green);color:#fff;font:700 1rem/1 "Red Hat Display",sans-serif;padding:15px 22px;border-radius:12px;text-decoration:none;transition:background .2s,transform .25s cubic-bezier(.16,1,.3,1)}
+.btn:hover{background:var(--deep);transform:translateY(-2px)}
+.hero{background:var(--mist);border-radius:28px;padding:clamp(24px,4.5vw,60px);display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(2.8rem,6vw,5.2rem)}
+.hero h1 span{color:var(--green)}
+.hero p{font-size:1.15rem;max-width:36ch;margin:22px 0 0;color:var(--soft)}
+.trust{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:8px;font-weight:500}
+.trust li{display:flex;gap:10px;align-items:center}
+.trust svg{flex:none}
+/* finder */
+[data-finder]{background:var(--paper);border-radius:20px;padding:clamp(16px,2.4vw,28px);box-shadow:0 1px 0 rgba(10,51,35,.06),0 24px 48px -28px rgba(10,51,35,.35)}
+.finder-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:var(--mist);border-radius:14px;padding:5px}
+.finder-tab{font:inherit;cursor:pointer;border:0;background:transparent;color:var(--deep);border-radius:10px;padding:10px 6px;text-align:center;transition:background .2s,color .2s}
+.finder-tab:hover{background:rgba(255,255,255,.7)}
+.finder-tab[aria-selected=true]{background:var(--green);color:#fff}
+.t-label{display:block;font:700 .98rem/1.1 "Red Hat Display",sans-serif}.t-ages{font-size:.78rem;opacity:.85}
+.finder-panel.swap{animation:rise .4s cubic-bezier(.16,1,.3,1)}
+@keyframes rise{from{transform:translateY(8px);opacity:.3}}
+.finder-meta{margin:18px 0 6px;display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;color:var(--soft)}
+.finder-meta strong{font:900 1.35rem/1 "Red Hat Display",sans-serif;color:var(--deep);letter-spacing:-.02em}
+.finder-count{margin-left:auto;color:var(--green);font-weight:700}
+.sessions{list-style:none;margin:0;padding:0}
+.session{display:grid;grid-template-columns:6.4rem 1fr auto auto;gap:12px;align-items:center;padding:11px 0;border-top:1px solid #DCE7DF}
+.s-day{font-weight:700}.s-time{color:var(--soft)}.s-time em{font-style:normal;font-size:.8rem;margin-left:6px}
+.s-status{justify-self:start;font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:99px;background:#D8EEDF;color:#0A5A33}
+.is-full .s-status{background:#FFE1D9;color:#9A2E16}
+.s-act{font-weight:700;color:var(--green);text-underline-offset:4px}
+/* cartwheel strip */
+.strip{display:flex;justify-content:space-between;align-items:center;padding:clamp(40px,7vw,90px) 0;--s:0deg}
+.strip svg{width:clamp(34px,7.5vw,92px);height:auto;transform:rotate(calc(var(--s) + var(--o)))}
+.strip svg:nth-child(odd){opacity:.28}
+.join{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:start}
+.join h2,.family h2{font-size:clamp(2.2rem,4.6vw,3.8rem)}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:3.4rem 1fr;gap:6px 18px;padding:22px 0;border-top:2px solid var(--deep)}
+.steps b{font:900 2.6rem/1 "Red Hat Display",sans-serif;color:var(--green);grid-row:span 2}
+.steps h3{font-size:1.5rem}.steps p{margin:0;color:var(--soft);max-width:48ch}
+.family{background:var(--deep);color:#fff;border-radius:28px;padding:clamp(28px,5vw,70px);margin-top:clamp(56px,8vw,110px);display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,70px);align-items:center}
+.family>svg{width:clamp(120px,20vw,240px);height:auto;animation:wheel 14s linear infinite}
+@keyframes wheel{to{transform:rotate(360deg)}}
+.family h2{color:#fff}.family h2 span{color:var(--coral)}
+.family p{max-width:54ch;color:#CFE0D6}
+.family ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.family li{background:rgba(255,255,255,.1);border-radius:99px;padding:6px 14px;font-weight:500;font-size:.9rem}
+footer{padding:40px 0 56px;display:flex;flex-wrap:wrap;gap:14px 36px;align-items:center;font-weight:500}
+footer .logo{margin-right:auto}
+@media (max-width:860px){
+ nav{display:none}header .btn{margin-left:auto;padding:12px 16px}
+ .hero,.join,.family{grid-template-columns:1fr}.hero{border-radius:20px;margin:0 -8px}
+ .session{grid-template-columns:1fr auto;gap:2px 12px}.s-act{grid-column:1/-1}.finder-count{margin-left:0;width:100%}
+ .finder-tabs{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div style="background:#17201B;color:#fff;font:500 14px/1.4 system-ui,sans-serif;padding:9px 20px;position:relative;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;z-index:2147483000"><span style="display:inline-flex;align-items:center;gap:8px"><svg style="height:12px;width:auto;color:#fff" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg> Design idea by Pete Owen Design. Not the live Hartford School of Gymnastics website.</span><a href="../index.html" style="color:#fff;font-weight:700">Back to the start</a></div>
+<!--
+THESIS: Clean and modern. One simple mark, a figure mid-cartwheel that also reads as a star, does all the brand work; everything else stays quiet. The timetable is in the first screen.
+OWN-WORLD: White and pale green, one confident green, coral for the head of the figure only; Red Hat Display; soft 28px corners; the mark turns as you scroll.
+STORY: A parent lands, sees the classes and spaces immediately, and asks for a place without scrolling.
+FIRST VIEWPORT: Left, headline and three reassurances; right, the working class finder.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="cw" viewBox="0 0 100 100"><g transform="rotate(16 50 54)"><rect x="43.500" y="16" width="13" height="78" rx="6.500" fill="currentColor" transform="rotate(40 50 55)"/><rect x="43.500" y="16" width="13" height="78" rx="6.500" fill="currentColor" transform="rotate(-40 50 55)"/><circle cx="50" cy="19" r="10" fill="#FF6B4A"/></g></symbol>
+  <symbol id="tick" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#0E7A47"/><path d="M5.500 10.400l3 3 6-6.500" fill="none" stroke="#fff" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+<div class="wrap">
+<header>
+  <a class="logo" href="#" aria-label="Hartford School of Gymnastics home"><svg width="44" height="44" style="color:#0E7A47" aria-hidden="true"><use href="#cw"/></svg><span>Hartford<small>School of Gymnastics</small></span></a>
+  <nav aria-label="Main"><a href="#classes">Classes</a><a href="#join">Joining</a><a href="#family">Our family</a><a href="#contact">Contact</a></nav>
+  <a class="btn" href="#classes">Find a class</a>
+</header>
+
+<main>
+<section class="hero" id="classes">
+  <div>
+    <h1>Find your feet. <span>Then flip them.</span></h1>
+    <p>Gymnastics from age 3 to adult at Hartford School of Gymnastics. Pick an age to see this week's sessions.</p>
+    <ul class="trust">
+      <li><svg width="20" height="20" aria-hidden="true"><use href="#tick"/></svg>First two sessions are pay as you go</li>
+      <li><svg width="20" height="20" aria-hidden="true"><use href="#tick"/></svg>DBS-checked volunteer coaches</li>
+      <li><svg width="20" height="20" aria-hidden="true"><use href="#tick"/></svg>British Gymnastics club</li>
+    </ul>
+  </div>
+  <div data-finder></div>
+</section>
+
+<div class="strip" aria-hidden="true" style="color:#0E7A47">
+  <svg viewBox="0 0 100 100" style="--o:0deg"><use href="#cw"/></svg><svg viewBox="0 0 100 100" style="--o:45deg"><use href="#cw"/></svg><svg viewBox="0 0 100 100" style="--o:90deg"><use href="#cw"/></svg><svg viewBox="0 0 100 100" style="--o:135deg"><use href="#cw"/></svg><svg viewBox="0 0 100 100" style="--o:180deg"><use href="#cw"/></svg><svg viewBox="0 0 100 100" style="--o:225deg"><use href="#cw"/></svg><svg viewBox="0 0 100 100" style="--o:270deg"><use href="#cw"/></svg><svg viewBox="0 0 100 100" style="--o:315deg"><use href="#cw"/></svg><svg viewBox="0 0 100 100" style="--o:360deg"><use href="#cw"/></svg>
+</div>
+
+<section class="join" id="join">
+  <h2>Three steps to your first session</h2>
+  <ol class="steps">
+    <li><b>1</b><h3>Email us for a place</h3><p>Pick a session and ask. We reply to confirm your place before you come.</p></li>
+    <li><b>2</b><h3>Try two sessions</h3><p>Pay as you go for the first two. Arrive five minutes early and a coach will meet you inside.</p></li>
+    <li><b>3</b><h3>Join the family</h3><p>Register with British Gymnastics before your third visit, then book monthly to keep your place.</p></li>
+  </ol>
+</section>
+
+<section class="family" id="family">
+  <svg viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#cw"/></svg>
+  <div>
+    <h2>Who grins, <span>wins!</span></h2>
+    <p>Our club is built on the feeling of family. Children work their way through our groups, grow up, and come back with children of their own. Whatever the goal, small and personal or large and developmental, the motto stays the same.</p>
+    <ul><li>Two welfare officers</li><li>First-aid trained senior coaches</li><li>Schools and disability groups welcome</li></ul>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <a class="logo" href="#"><svg width="36" height="36" style="color:#0E7A47" aria-hidden="true"><use href="#cw"/></svg><span>Hartford</span></a>
+  <a href="mailto:info@hartfordgymnastics.com">info@hartfordgymnastics.com</a>
+  <a href="tel:01606782658">01606 782658</a>
+</footer>
+</div>
+<script src="files/shared.js"></script>
+<script>
+var strip=document.querySelector('.strip');
+addEventListener('scroll',function(){strip.style.setProperty('--s',(scrollY*.3)+'deg')},{passive:true});
+</script>
+</body>
+</html>

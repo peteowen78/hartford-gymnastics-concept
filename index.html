@@ -50,6 +50,12 @@
   .btn:hover{background:#2B3A32}
   .ghost{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid var(--ink);border-radius:var(--r);padding:10px 17px}
   .ghost:hover{background:var(--card)}
+  .ideas{margin:0 0 72px}
+  .idea-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .idea{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px}
+  .idea h3{font-size:20px;line-height:1.25;margin:0 0 6px}
+  .idea p{margin:0;color:var(--soft);font-size:16px}
+  @media (max-width:760px){.idea-list{grid-template-columns:1fr}}
   footer{border-top:1px solid var(--line);padding:26px 0 52px;font-size:15px;color:var(--soft)}
   footer p{margin:0 0 8px;max-width:70ch}
   footer .pod{height:13px;width:auto;vertical-align:-1px;margin-right:8px;color:var(--ink)}
@@ -86,22 +92,118 @@
     </a>
     <a class="route dark" href="#designs">
       <span class="kicker">Design</span>
-      <strong>A design concept</strong>
-      <span class="rtext">A working homepage showing how your new website could look.</span>
-      <span class="go">See the design</span>
+      <strong>13 design ideas</strong>
+      <span class="rtext">13 different ways your new website could look. Each one is a working homepage you can scroll through.</span>
+      <span class="go">See the designs</span>
     </a>
 </div>
 
 <section id="designs">
-  <h2>A design concept</h2>
-  <p class="sub">Open it to scroll through the whole page. Nothing here is final, and nothing on your current website has been changed.</p>
-  <div class="grid single">
+  <h2>13 design ideas</h2>
+  <p class="sub">Open any of them to scroll through the whole page. Nothing here is final, and nothing on your current website has been changed.</p>
+  <div class="grid ">
     <article class="design">
       <a class="shot" href="design.html"><img src="designs/thumb-1.jpg" alt="The first screen of Have a Go" width="960" height="600" loading="lazy"></a>
       <div class="dtext">
         <h3>Have a Go</h3>
         <p>A sunny, friendly homepage built around one invitation for children and parents: have a go.</p>
         <p class="links"><a class="btn" href="design.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/i-noticeboard.html"><img src="designs/thumb-2.jpg" alt="The first screen of Noticeboard" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Noticeboard</h3>
+        <p>The site as the club&#x27;s own noticeboard: pinned paper, cut-out letters, pen marks and a FULL stamp.</p>
+        <p class="links"><a class="btn" href="designs/i-noticeboard.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/h-soft-tumble.html"><img src="designs/thumb-3.jpg" alt="The first screen of Soft Tumble" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Soft Tumble</h3>
+        <p>Gymnasts built from coloured foam blocks, landing on a crash mat.</p>
+        <p class="links"><a class="btn" href="designs/h-soft-tumble.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/g-tumble.html"><img src="designs/thumb-4.jpg" alt="The first screen of Tumble" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Tumble</h3>
+        <p>Gymnasts built from simple shapes, one at a time, on Club Green.</p>
+        <p class="links"><a class="btn" href="designs/g-tumble.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/e-have-a-go.html"><img src="designs/thumb-5.jpg" alt="The first screen of Have a Go, in Club Green" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Have a Go, in Club Green</h3>
+        <p>Bendy line-drawn gymnasts hopping along a floor line, in the club&#x27;s green.</p>
+        <p class="links"><a class="btn" href="designs/e-have-a-go.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/e-have-a-go-sunshine.html"><img src="designs/thumb-6.jpg" alt="The first screen of Have a Go, in sunshine yellow" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Have a Go, in sunshine yellow</h3>
+        <p>The same bendy gymnasts in a warmer, sunnier set of colours.</p>
+        <p class="links"><a class="btn" href="designs/e-have-a-go-sunshine.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/e-brand-sheet.html"><img src="designs/thumb-7.jpg" alt="The first screen of Have a Go: the identity" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Have a Go: the identity</h3>
+        <p>The Have a Go logo, colours, lettering and characters on one sheet.</p>
+        <p class="links"><a class="btn" href="designs/e-brand-sheet.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/d-cartwheel.html"><img src="designs/thumb-8.jpg" alt="The first screen of Cartwheel" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Cartwheel</h3>
+        <p>Clean and modern, with one cartwheeling mark and the timetable in the first screen.</p>
+        <p class="links"><a class="btn" href="designs/d-cartwheel.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/f-level-up.html"><img src="designs/thumb-9.jpg" alt="The first screen of Level Up" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Level Up</h3>
+        <p>Sporty and bold, led by big lettering.</p>
+        <p class="links"><a class="btn" href="designs/f-level-up.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/b-plus-club-colours-grin.html"><img src="designs/thumb-10.jpg" alt="The first screen of Club Colours, with a grin" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Club Colours, with a grin</h3>
+        <p>The club&#x27;s green and a tidy layout, with more fun added.</p>
+        <p class="links"><a class="btn" href="designs/b-plus-club-colours-grin.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/b-club-colours.html"><img src="designs/thumb-11.jpg" alt="The first screen of Club Colours" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Club Colours</h3>
+        <p>The club&#x27;s own green, kept and tidied up.</p>
+        <p class="links"><a class="btn" href="designs/b-club-colours.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/a-soft-landing.html"><img src="designs/thumb-12.jpg" alt="The first screen of Soft Landing" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Soft Landing</h3>
+        <p>Soft, friendly shapes in the colours of the gym&#x27;s foam blocks.</p>
+        <p class="links"><a class="btn" href="designs/a-soft-landing.html">Open this design</a></p>
+      </div>
+    </article>
+    <article class="design">
+      <a class="shot" href="designs/c-big-grin.html"><img src="designs/thumb-13.jpg" alt="The first screen of Big Grin" width="960" height="600" loading="lazy"></a>
+      <div class="dtext">
+        <h3>Big Grin</h3>
+        <p>The most playful of the early options.</p>
+        <p class="links"><a class="btn" href="designs/c-big-grin.html">Open this design</a></p>
       </div>
     </article>
   </div>

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hartford School of Gymnastics — Direction G, Tumble (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#12703A;--ink:#0C2416;--paper:#ECEBE6;--stone:#D9D8D0;--sun:#FFCB2E;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--green);color:var(--paper);font:400 1.125rem/1.5 Jost,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-weight:800;line-height:.94;letter-spacing:-.03em;margin:0;text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--sun);outline-offset:3px}
+.light :focus-visible{outline-color:var(--ink)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* one figure at a time: it cartwheels out, and the next one cartwheels in */
+svg.fig{display:block;fill:currentColor;transition:transform .7s var(--ease),opacity .3s}
+svg.fig.out{transform:rotate(90deg);opacity:0;transition:transform .3s ease-in,opacity .3s ease-in}
+svg.fig.pre{transform:rotate(-90deg);opacity:0;transition:none}
+
+/* header */
+.top{display:flex;align-items:center;gap:28px;padding:18px 0}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:1.6rem;line-height:.9;letter-spacing:-.03em}
+.logo .fig{width:44px;height:44px;flex:none}
+.logo:hover .fig{transform:rotate(90deg)}
+.logo small{display:block;font-weight:500;font-size:.78rem;letter-spacing:0;margin-top:4px}
+.top nav{margin-left:auto;display:flex;gap:28px;font-weight:500}
+.top nav a{text-decoration:none;padding:4px 0;box-shadow:0 3px 0 transparent;transition:box-shadow .2s}
+.top nav a:hover{box-shadow:0 3px 0 var(--sun)}
+.btn{display:inline-block;background:var(--sun);color:var(--ink);font-weight:700;font-size:1.1rem;line-height:1.2;padding:15px 26px;text-decoration:none;transition:background .2s,color .2s}
+.btn:hover{background:var(--paper)}
+.btn.alt{background:var(--ink);color:var(--paper)}.btn.alt:hover{background:var(--paper);color:var(--ink)}
+
+/* hero: the headline and one large gymnast */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(16px,3vw,36px) 0 clamp(48px,7vw,92px)}
+.hero h1{font-size:clamp(3.1rem,7.6vw,6rem)}
+.hero p{max-width:30ch;margin:26px 0 30px;font-size:1.35rem;line-height:1.4;font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-fig{border:0;background:none;padding:0;color:var(--paper);cursor:pointer;justify-self:center;width:min(100%,500px);aspect-ratio:1}
+.hero-fig .fig{width:100%;height:100%}
+
+/* finder */
+.finder{background:var(--paper);color:var(--ink);padding:clamp(56px,8vw,104px) 0 clamp(64px,9vw,120px)}
+.finder h2,.join h2{font-size:clamp(2.5rem,5.6vw,4.4rem);margin-bottom:clamp(26px,3.6vw,44px)}
+[data-finder]{display:grid;grid-template-columns:clamp(150px,19vw,250px) minmax(0,1fr);gap:clamp(28px,4vw,52px) clamp(28px,5vw,72px);align-items:start}
+.finder-tabs{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.finder-tab{font:inherit;cursor:pointer;border:0;border-radius:0;text-align:left;padding:18px 20px;background:var(--stone);color:var(--ink);transition:background .25s,color .25s}
+.finder-tab:hover{background:var(--ink);color:var(--paper)}
+.finder-tab[aria-selected=true]{background:var(--green);color:var(--paper)}
+.t-label{display:block;font-weight:800;font-size:clamp(1.15rem,2vw,1.6rem);line-height:1;letter-spacing:-.02em}
+.t-ages{display:block;font-weight:500;font-size:1rem;margin-top:6px}
+.age-fig{color:var(--green);width:100%;aspect-ratio:1}
+.age-fig .fig{width:100%;height:100%}
+.finder-panel.swap{animation:rise .5s cubic-bezier(.16,1,.3,1)}
+@keyframes rise{from{transform:translateY(14px);opacity:.25}}
+.finder-meta{margin:0 0 14px;display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline}
+.finder-meta strong{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+.finder-count{margin-left:auto;font-weight:700}
+.sessions{list-style:none;margin:0;padding:0}
+.session{display:grid;grid-template-columns:9.5rem 1fr 7rem auto;gap:16px;align-items:center;padding:16px 0;border-top:2px solid var(--ink)}
+.session:last-child{border-bottom:2px solid var(--ink)}
+.s-day{font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
+.s-time em{font-style:normal;font-size:.95rem;font-weight:500;background:var(--stone);padding:2px 10px;margin-left:8px;white-space:nowrap}
+.s-status{font-weight:700;display:flex;align-items:center;gap:9px}
+.s-status::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--green);flex:none}
+.is-full .s-status::before{border-radius:0;background:var(--ink)}
+.is-full .s-day,.is-full .s-time{opacity:.72}
+.s-act{font-weight:700;text-underline-offset:5px;text-decoration-thickness:2px}
+.s-act:hover{color:var(--green)}
+
+/* joining: plain numbered steps, no pictures */
+.join{background:var(--ink);padding:clamp(56px,8vw,104px) 0 clamp(64px,9vw,120px)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,64px);counter-reset:step}
+.steps li{counter-increment:step;border-top:4px solid var(--paper);padding-top:14px}
+.steps li::before{content:counter(step);display:block;font-weight:800;font-size:clamp(4rem,8vw,6rem);line-height:.9;letter-spacing:-.03em;color:var(--sun);margin-bottom:16px}
+.steps h3{font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:10px}
+.steps p{margin:0;max-width:30ch}
+
+/* family */
+.family{padding:clamp(60px,9vw,120px) 0}
+.family .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.family h2{font-size:clamp(3.2rem,8.2vw,6rem)}
+.family p{max-width:52ch;margin:26px 0 0}
+.family ul{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,max-content));gap:10px 34px;font-weight:700}
+.family li{display:flex;align-items:center;gap:10px}
+.family li::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--sun);flex:none}
+.family .fig{width:min(100%,400px);height:auto;aspect-ratio:1;color:var(--sun);justify-self:center}
+
+/* footer */
+footer{background:var(--paper);color:var(--ink)}
+.foot{display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center;padding:34px 0 44px;font-weight:700}
+.foot .logo{margin-right:auto;color:var(--green)}.foot .logo span{color:var(--ink)}
+.foot a{text-underline-offset:5px}
+
+@media (max-width:860px){
+ .top nav{display:none}.top .btn{margin-left:auto;padding:12px 18px;font-size:1rem}
+ .hero,.family .wrap{grid-template-columns:1fr}
+ .hero p{font-size:1.2rem}
+ .hero-fig{width:min(78%,340px);justify-self:start;margin-top:8px}
+ [data-finder]{grid-template-columns:1fr;gap:24px}
+ .finder-tabs{grid-template-columns:repeat(2,1fr)}
+ .age-fig{width:112px}
+ .session{grid-template-columns:1fr auto;gap:4px 14px}.s-time{text-align:right}.s-time em{display:block;width:max-content;margin:4px 0 0 auto}.s-act{grid-column:1/-1;margin-top:4px}
+ .finder-count{margin-left:0;width:100%}
+ .steps{grid-template-columns:1fr;gap:30px}
+ .steps li{display:grid;grid-template-columns:auto 1fr;gap:0 16px;align-items:start}
+ .steps li::before{grid-row:1/3;font-size:4.4rem;margin:0;width:3rem}
+ .family ul{grid-template-columns:1fr}
+ .family .fig{width:min(70%,280px);justify-self:start}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div style="background:#17201B;color:#fff;font:500 14px/1.4 system-ui,sans-serif;padding:9px 20px;position:relative;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;z-index:2147483000"><span style="display:inline-flex;align-items:center;gap:8px"><svg style="height:12px;width:auto;color:#fff" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg> Design idea by Pete Owen Design. Not the live Hartford School of Gymnastics website.</span><a href="../index.html" style="color:#fff;font-weight:700">Back to the start</a></div>
+<!--
+THESIS: One gymnast at a time. Each figure is built from a circle, a triangle, a bar and an arc, shown large and alone with room around it, and it changes pose with a cartwheel. Refuses the photo hero with three icon cards, and refuses a wall of icons.
+OWN-WORLD: Club green ground; deep green-black and off-white fields; sunshine yellow for actions and one figure; solid one-colour figures with circle heads; Jost geometric lettering; square corners, no outlines, no shadows.
+STORY: A parent meets one cheerful shape-gymnast, picks their child's age, sees which sessions have places and asks for one.
+FIRST VIEWPORT: Left, "Come and have a go." in heavy off-white lettering with two buttons. Right, a single large off-white gymnast that cartwheels into a new pose every few seconds.
+FORM: a figure you can play with (candidate 7 of 7, revised after Pete's feedback: figures never appear as a set); seed 0a0c74a7.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="g-star" viewBox="0 0 120 120"><polygon points="14,46 36,46 106,110 84,110"/><polygon points="106,46 84,46 14,110 36,110"/><circle cx="60" cy="24" r="14"/></symbol>
+  <symbol id="g-straddle" viewBox="0 0 120 120"><polygon points="18,8 42,8 60,46 78,8 102,8 72,68 48,68"/><circle cx="60" cy="86" r="13"/><rect x="18" y="104" width="84" height="10"/></symbol>
+  <symbol id="g-tada" viewBox="0 0 120 120"><circle cx="60" cy="24" r="12"/><path d="M24 22a36 36 0 0 0 72 0H80a20 20 0 0 1-40 0z"/><polygon points="60,64 100,112 20,112"/></symbol>
+  <symbol id="g-splits" viewBox="0 0 120 120"><circle cx="60" cy="22" r="13"/><polygon points="38,42 82,42 60,82"/><polygon points="4,108 26,88 94,88 116,108"/></symbol>
+  <symbol id="g-family" viewBox="0 0 120 120"><circle cx="42" cy="30" r="17"/><path d="M8 112V88a34 34 0 0 1 68 0v24z"/><circle cx="96" cy="66" r="11"/><path d="M80 112v-12a16 16 0 0 1 32 0v12z"/></symbol>
+  <symbol id="g-balance" viewBox="0 0 120 120"><circle cx="60" cy="20" r="12"/><rect x="10" y="38" width="100" height="13"/><polygon points="42,51 78,51 60,100"/><rect x="6" y="102" width="108" height="11"/></symbol>
+  <symbol id="g-roll" viewBox="0 0 120 120"><path d="M58 28a40 40 0 1 0 40 40H78a20 20 0 1 1-20-20z"/><circle cx="88" cy="36" r="14"/></symbol>
+  <symbol id="g-leap" viewBox="0 0 120 120"><circle cx="60" cy="22" r="13"/><polygon points="4,104 28,104 60,70 92,104 116,104 70,44 50,44"/></symbol>
+</defs></svg>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#" aria-label="Hartford School of Gymnastics home"><svg class="fig" viewBox="0 0 120 120" aria-hidden="true"><use href="#g-star"/></svg><span>Hartford<small>School of Gymnastics</small></span></a>
+    <nav aria-label="Main"><a href="#classes">Classes</a><a href="#join">Joining</a><a href="#family">Our family</a><a href="#contact">Contact</a></nav>
+    <a class="btn" href="#classes">Find a class</a>
+  </header>
+</div>
+
+<main>
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <h1>Come and have a go.</h1>
+      <p>Gymnastics from age 3 to adult. Your first two sessions are pay as you go.</p>
+      <div class="cta"><a class="btn" href="#classes">Find a class</a><a class="btn alt" href="#join">How joining works</a></div>
+    </div>
+    <button class="hero-fig" type="button" data-poses="star straddle leap tada roll splits balance" aria-label="Show another gymnastics move">
+      <svg class="fig" viewBox="0 0 120 120" aria-hidden="true"><use href="#g-star"/></svg>
+    </button>
+  </section>
+</div>
+
+<section class="finder light" id="classes">
+  <div class="wrap">
+    <h2>How old is your gymnast?</h2>
+    <div data-finder></div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <h2>Three steps to your first session</h2>
+    <ol class="steps">
+      <li><h3>Email us for a place</h3><p>Pick a session and ask. We reply to confirm your place before you come.</p></li>
+      <li><h3>Try two sessions</h3><p>Pay as you go for the first two. Arrive five minutes early and a coach will meet you inside.</p></li>
+      <li><h3>Join the family</h3><p>Register with British Gymnastics before your third visit, then book monthly to keep your place.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="family" id="family">
+  <div class="wrap">
+    <div>
+      <h2>Who grins, wins!</h2>
+      <p>Our club is built on the feeling of family. Children work their way through our groups, grow up, and come back with children of their own. Whatever the goal, small and personal or large and developmental, the motto stays the same.</p>
+      <ul><li>DBS-checked coaches</li><li>Two welfare officers</li><li>First-aid trained senior coaches</li><li>British Gymnastics club</li></ul>
+    </div>
+    <svg class="fig" viewBox="0 0 120 120" aria-hidden="true"><use href="#g-family"/></svg>
+  </div>
+</section>
+</main>
+
+<footer class="light" id="contact">
+  <div class="wrap foot">
+    <a class="logo" href="#"><svg class="fig" viewBox="0 0 120 120" aria-hidden="true"><use href="#g-star"/></svg><span>Hartford<small>School of Gymnastics</small></span></a>
+    <a href="mailto:info@hartfordgymnastics.com">info@hartfordgymnastics.com</a>
+    <a href="tel:01606782658">01606 782658</a>
+  </div>
+</footer>
+
+<script src="files/shared.js"></script>
+<script>
+(function () {
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Swap a figure for another pose: the old one cartwheels out, the new one cartwheels in.
+  function swap(svg, name) {
+    var use = svg.querySelector('use');
+    if (use.getAttribute('href') === '#g-' + name) return;
+    if (still) { use.setAttribute('href', '#g-' + name); return; }
+    svg.classList.add('out');
+    setTimeout(function () {
+      use.setAttribute('href', '#g-' + name);
+      svg.classList.remove('out');
+      svg.classList.add('pre');
+      void svg.getBoundingClientRect();
+      svg.classList.remove('pre');
+    }, 300);
+  }
+
+  // Hero: one gymnast, a new move every few seconds or on a tap.
+  var hero = document.querySelector('.hero-fig');
+  var poses = hero.getAttribute('data-poses').split(' ');
+  var at = 0, timer;
+  function next() { at = (at + 1) % poses.length; swap(hero.querySelector('.fig'), poses[at]); }
+  function play() { if (!still) timer = setInterval(function () { if (!document.hidden) next(); }, 3400); }
+  hero.addEventListener('click', function () { clearInterval(timer); next(); play(); });
+  play();
+
+  // Class finder: one figure beside the timetable, matching the age group picked.
+  var figs = { pre: 'roll', rec: 'star', jun: 'straddle', adu: 'balance' };
+  var tabs = document.querySelector('.finder-tabs');
+  var panel = document.querySelector('.finder-panel');
+  if (!tabs || !panel) return;
+  var holder = document.createElement('div');
+  holder.className = 'age-fig';
+  holder.setAttribute('aria-hidden', 'true');
+  holder.innerHTML = '<svg class="fig" viewBox="0 0 120 120"><use href="#g-star"/></svg>';
+  panel.parentNode.insertBefore(holder, panel);
+  function sync() {
+    var on = tabs.querySelector('[aria-selected=true]');
+    if (!on) return;
+    var id = (on.className.match(/tab-(\w+)/) || [])[1];
+    if (figs[id]) swap(holder.querySelector('.fig'), figs[id]);
+  }
+  new MutationObserver(sync).observe(tabs, { attributes: true, subtree: true, attributeFilter: ['aria-selected'] });
+  sync();
+})();
+</script>
+</body>
+</html>
